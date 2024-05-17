@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\ListController;
+use App\Http\Controllers\ListProdukController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,4 +18,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/list', [ListController::class, 'index']);
+Route::get('/listproduk', [ListProdukController::class, 'show']);
