@@ -22,10 +22,10 @@ class ListProdukController extends Controller
     {
         $produk = new Produk;
         $produk->nama = $request->input('nama');
-        $produk->deskripsi =$request->input('deskripsi');
+        $produk->deskripsi = $request->input('deskripsi');
         $produk->harga = $request->input('harga');
         $produk->save();
 
-        return redirect()->back()->with('success', 'Data berhasil!');
+        return redirect()->back()->with('success', 'Data berhasil disimpan!');
     }
 }
