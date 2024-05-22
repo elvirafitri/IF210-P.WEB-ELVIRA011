@@ -26,6 +26,9 @@
                         <th scope="col" class="px-6 py-3">
                             Harga Produk
                         </th>
+                        <th scope="col" class="px-6 py-3 bg-blue-500">
+                            Action
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
@@ -42,6 +45,13 @@
                         </td>
                         <td class="px-6 py-4">
                             {{ $harga[$index] }}
+                        </td>
+                        <td class="px-6 py-4 bg-blue-500">
+                            <form action="{{ route('produk.delete', $id) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" onclick="return confirm('Are you sure you want to delete {{ $item }}?')">Delete</button>
+                            </form>
                         </td>
                     </tr>
                     @endforeach
@@ -88,7 +98,7 @@
                 <input type="number" id="harga" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
             </div>
             </div>
-            <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Simpan</button>
+            <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Simpan</button>
         </form>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
